@@ -1,0 +1,83 @@
+package bankOA;
+
+public class Bank {
+	
+	double total;
+	String name;
+  public void deposite(double a) {
+
+	  System.out.println(name +" your total money available after the depostie is "+ (total + a));
+	  total = total + a;
+	  
+	  
+  }
+  
+  public void withdraw(double b) 
+  {
+	  if(b>total)
+	  {
+		System.out.println(name + " not enough funds in your account. Pls check your balance.");  
+		
+	}
+	  else
+	  {
+		  
+	   total = total - b;
+	  
+	  System.out.println(name +" your total money available after the withbraw is "+ (total ));
+	  
+  }
+  }
+public void intrest () {
+	double c=0.05;
+	double d = total *c;
+	total = total +d;
+	System.out.println(name +" your total money available after adding the intrest is "+(total));
+	
+}
+
+}
+
+
+
+
+
+
+package bankOA;
+
+public class Account {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to the BankOA website");
+		Bank anu = new Bank();
+         anu.name="Anu";
+         
+		anu.deposite(1000);
+		anu.withdraw(55.5);
+		anu.intrest();
+		
+		Bank ram = new Bank();
+		ram.name="Ram";
+		ram.deposite(10000);
+		ram.withdraw(6500.50);
+		ram.intrest();
+		
+		anu.deposite(500);
+		ram.intrest();
+		ram.deposite(1000);
+		ram.withdraw(500);
+		anu.withdraw(1000);
+		anu.intrest();
+		anu.deposite(5000);
+		ram.deposite(8000);
+		ram.withdraw(20000);
+		ram.withdraw(2000);
+		
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
